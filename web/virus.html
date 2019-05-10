@@ -1,0 +1,90 @@
+<html>
+<head>
+    <link rel="stylesheet" href="virus.css">
+</head>
+<body>
+<div id="zoom">
+    <header>
+
+    </header>
+    <ul>
+        <li><a  href="#home">Start</a></li>
+        <li><a id="toggle" href="#news">Show</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Virus</a>
+            <div class="dropdown-content">
+
+            </div>
+        </li>
+    </ul>
+    <div id="main">
+        <div id="canvasDiv">
+            <div align="center">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div id="leftDiv">
+            <form id="form">
+                <fieldset>
+                    <legend>Information:</legend>
+                    Name of the virus:<br>
+                    <input type="text" name="name"><br>
+                    Deadliness (1-100):<br>
+                    <input type="number" name="deadliness"><br>
+                    Range:<br>
+                    <input type="number" name="range"><br>
+                    Contagiousness (1-100):<br>
+                    <input type="number" name="contagiousness"><br>
+                    Contagious days:<br>
+                    <input type="number" name="contagiousDays"><br>
+                    Lifespan:<br>
+                    <input type="number" name="lifespan"><br><br>
+                    <div align="center">
+                      <button type="button" onclick="getProperties()">Submit parameters</button>
+                      <button type="button" onclick="stopSimulation()">Stop simulation</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="rightDiv">
+            <fieldset>
+                <legend>Information:</legend>
+
+                <div id="coordDiv">
+
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        $("button").click(function(){
+                            $("#coordDiv").empty();
+                        });
+                    });
+                </script>
+                <div id="picDiv">
+                    <p>Healthy human:</p>
+                    <div class="white-gradient"></div>
+                    <p>Immune from virus:</p>
+                    <div class="yellow-gradient"></div>
+                    <p>Immune by birth:</p>
+                    <div class="orange-gradient"></div>
+                    <p>Infected:</p>
+                    <div class="white-red-gradient"></div>
+                    <p>Infected and contagious:</p>
+                    <div class="red-black-gradient"></div>
+                    <p>Dead:</p>
+                    <div class="black-gradient"></div>
+
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+    <script src="/virus.js" type = "text/javascript"></script>
+</div>
+</body>
+<footer>
+</footer>
+
+</html>
